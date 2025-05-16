@@ -88,7 +88,7 @@ def main():
             else:
                 sys.exit("Invalid parameter. Select '-e' for encoding, or '-d' for decoding")
             
-            if(beforeProcessing[encodingIndex] != " "): # if we encoded a space, the key index is not incremented
+            if(beforeProcessing[encodingIndex] not in " ,.!@#$%^&*()/|\\{}[]'\"-_=+" ): # if we encoded a space, the key index is not incremented
                 keyIndex = (keyIndex+1)%len(key)
             encodingIndex+=1
         
